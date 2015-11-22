@@ -1,0 +1,163 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,500,700&subset=latin,latin-ext);
+html {
+  min-height: 100%;
+}
+body {
+  min-height: 100%;
+  background: url("../../src/background.jpg") no-repeat center center fixed;
+  background-size: cover;
+  background-attachment: scroll;
+  background-repeat: no-repeat;
+  background-color: #f2f2f6;
+  font-family: 'Roboto', sans-serif;
+}
+button {
+  display: inline-block;
+  padding: 6px 12px;
+  white-space: nowrap;
+  vertical-align: middle;
+  color: #fff;
+  font-size: 19px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  -webkit-appearance: button;
+}
+.container {
+  margin: 40px auto 0;
+  width: 1024px;
+}
+.container .tile-town {
+  position: relative;
+  float: left;
+  margin: 0 0.5% 1%;
+  width: 32.3%;
+  height: 350px;
+  overflow: hidden;
+  background-color: #292933;
+  color: white;
+  opacity: 0.92;
+}
+.container .tile-town.template {
+  display: none;
+}
+.container .tile-town.options {
+  background-color: black;
+}
+.container .tile-town h1 {
+  padding: 5px 10px 10px;
+  margin: 0;
+}
+.container .tile-town i {
+  padding-top: 25px;
+}
+.container .tile-town .temp {
+  float: left;
+  padding-top: 20px;
+  width: 62%;
+  height: 180px;
+  text-align: center;
+  color: #00d9bd;
+  font-size: 60px;
+  background-color: #31323d;
+}
+.container .tile-town .situation {
+  float: right;
+  padding: 15px 5px 0;
+  width: 34%;
+  height: 180px;
+  text-align: center;
+}
+.container .tile-town .situation p {
+  padding: 10px 0;
+  margin: 0;
+  font-weight: 400;
+}
+.container .tile-town .situation #condition {
+  font-size: 24px;
+}
+.container .tile-town .situation #wind {
+  font-size: 18px;
+}
+.container .tile-town .forecast {
+  float: left;
+  padding: 35px 0 10px 3%;
+  width: 97%;
+  text-align: left;
+  font-size: 20px;
+}
+.container .tile-town .forecast i {
+  padding: 0 20px;
+}
+.container .tile-town:hover .remove-tile {
+  display: flex;
+}
+.container .tile-town .remove-tile {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #292933;
+  opacity: 0.9;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+.container .tile-town .remove-tile .remove-town {
+  background-color: #f94545;
+  border-color: #f94545;
+}
+.container .action-part {
+  clear: both;
+  margin: 0 0.5%;
+  padding-right: 15px;
+  height: 60px;
+  line-height: 60px;
+  background-color: #292933;
+  text-align: right;
+  opacity: 0.92;
+}
+.container .action-part input {
+  margin-right: 50px;
+  font-size: 22px;
+}
+.container .action-part span {
+  color: #fff;
+}
+.container .action-part button {
+  margin-left: 50px;
+  background-color: #3bb151;
+  border-color: #3bb151;
+}
+/* media query */
+@media (max-width: 1050px) {
+  .container {
+    margin-top: 0;
+    width: 100%;
+  }
+}
+@media (max-width: 960px) {
+  .container .tile-town {
+    width: 49%;
+  }
+}
+@media (max-width: 768px) {
+  .container .tile-town {
+    width: 99%;
+  }
+  .container .action-part {
+    padding: 0 15px;
+    height: 150px;
+  }
+  .container .action-part input {
+    margin-right: 0;
+    width: 100%;
+  }
+}
+@media (max-width: 420px) {
+  .container .action-part {
+    height: 200px;
+  }
+}
