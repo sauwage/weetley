@@ -1,4 +1,4 @@
-var $ = require('jquery');
+var $  = require('jquery');
 var weatherJson = require('./weather-icons.json');
 $(function() {
   $('button[name="add-town"]').click(function() {
@@ -32,7 +32,7 @@ $(function() {
       data: {
         'q' : town,
         'units' : 'metric',
-        'appid' : '2de143494c0b295cca9337e1e96b00e0'
+        'appid' : '8d37df734b83981d7ad5e4f21c004aa2'
       },
       success: function(response) {
         var $tile = $('.tile-town[rel="'+town+'"]');
@@ -57,7 +57,7 @@ $(function() {
       data: {
         'q' : town,
         'units' : 'metric',
-        'appid' : '2de143494c0b295cca9337e1e96b00e0'
+        'appid' : '8d37df734b83981d7ad5e4f21c004aa2'
       },
       success: function(response) {
         var $tile = $('.tile-town[rel="'+town+'"]');
@@ -89,6 +89,6 @@ $(function() {
   };
 
   addTile('Berlin', 25);
-  addTile('Hamburg', 30);
-  addTile('Prague', 35);
+  //addTile('Hamburg', 30);
+  //addTile('Prague', 35);
 });
