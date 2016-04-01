@@ -1,49 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="weetley">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <title>Wather online</title>
+    <title>Weather online</title>
     <link href="dist/css/main.min.css" rel="stylesheet">
-    <link href="src/components/weather-icons/css/weather-icons.min.css" rel="stylesheet">
+    <script src="src/components/angular/angular.js"></script>
+    <script type="text/javascript" src="src/js/app.js"></script>
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
   <body>
-    <div class="container">
-      <div class="tiles">
-        <div class="tile-town template">
-          <h1></h1>
-          <div class="temp"><span class="degrees"></span><br><span class="icon"></span></div>
-          <div class="situation">
-            <p id="condition"></p>
-            <p id="wind">wind speed:<br><span class="speed"></span></p>
-          </div>
-          <div class="forecast">
-            <div class="next"><span class="date"></span><span class="temperature"></span></div>
-          </div>
-          <div class="remove-tile">
-            <button class="remove-town" name="remove-town">Remove this town</button>
-          </div>
-        </div>
-      </div>
-      <div class="action-part">
-        <form>
-          <input type="text" name="town" placeholder="e.g. Singapore">
-          <span>refresh every:</span>
-          <select name="interval">
-            <option value="30">30 seconds</option>
-            <option value="60">1 minute</option>
-            <option value="180">3 minutes</option>
-          </select>
-          <button name="add-town">Add town</button>
-        </form>
-      </div>
-    </div>
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="dist/js/bundle.js"></script>
   </body>
 </html>
