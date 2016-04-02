@@ -1,1 +1,7 @@
-var app = angular.module('weetley',[]); 
+(function(){
+  var app = angular.module('weetley',[]);
+
+  app.controller('', function(){
+
+  });
+})();
