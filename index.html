@@ -14,12 +14,22 @@
     <![endif]-->
   </head>
   <body>
-    <div class="container">
+    <div class="container" ng-controller="weatherReport">
       <section class="tiles">
-        
+        <div class="tile-town" ng-repeat="x in townsNames">
+          <h1>{{x.name}}</h1>
+          <div></div>
+          <div></div>
+        </div>
       </section>
       <section class="action-part">
-
+        <div class="tab-input">
+          <form>
+            <span>Add town to the collection: </span>
+            <input class="input" type="text" placeholder="e. g. Singapore" ng-model="townToBeAdded">
+            <input class="submit" type="submit" ng-click="addTown()" value="+">
+          </form>
+        </div>
       </section>
     </div>
   </body>
