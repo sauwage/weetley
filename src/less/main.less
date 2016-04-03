@@ -1,13 +1,11 @@
 html {
-    height: 100%;
+    min-height: 100%;
 }
 body {
-    margin: 0;
     min-height: 100%;
-    background: url('../../src/background.jpg') center center;
-    background-attachment: scroll;
+    background: url('../../src/background.jpg')no-repeat center center;
     background-size: cover;
-    background-repeat: no-repeat;
+    background-attachment: scroll;
     color: white;
 }
 .container {
@@ -32,23 +30,25 @@ section.tiles {
 section.action-part {
     display: flex;
     justify-content: center;
-    font-size: 28px;
+    font-size: 27px;
     .tab-input {
-        padding: 3% 3%;
+        padding: 2%;
         background-color: rgba(0, 0, 0, 0.3);
-        width: 50%;
+        border-radius: 90px;
         form {
             display: flex;
-            justify-content: space-between;
+            justify-content: space-around;
+            span {
+                align-self: center;
+            }
             input {
-                margin-left: 10px;
-                padding: 0 1%;
                 &.input {
                     font-size: 20px;
+                    margin: 0 35px;
                 }
                 &.submit {
-                    width: 9%;
-                    font-size: 26px;
+                    padding: 3px 13px;
+                    font-size: 30px;
                     background-color: rgba(0,0,0,0.4);
                     color: #fff;
                     border: none;

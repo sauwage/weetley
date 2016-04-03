@@ -3,11 +3,18 @@
 
     app.controller('weatherReport', function($scope){
         $scope.townsNames = [];
+
         $scope.addTown = function(){
             $scope.townsNames.push({
                 name: $scope.townToBeAdded
             });
             $scope.townToBeAdded = "";
+        };
+
+        $scope.removeTown = function(){
+            $scope.townsNames.pop({
+                name: $scope.
+            });
         };
     });
 })();
