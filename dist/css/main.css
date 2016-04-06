@@ -16,14 +16,45 @@ section.tiles {
   justify-content: center;
   flex-wrap: wrap;
   margin-bottom: 5%;
-  text-align: center;
 }
 section.tiles .tile-town {
+  display: flex;
+  flex-direction: column;
   margin: 0 0.5% 1%;
   width: 30%;
   height: 300px;
   background-color: rgba(0, 0, 0, 0.3);
   color: white;
+}
+section.tiles .tile-town .remover {
+  display: block;
+  position: relative;
+}
+section.tiles .tile-town .remover input[type='button'] {
+  position: absolute;
+  right: 0;
+  align-self: flex-end;
+  border: none;
+  background: transparent;
+  font-size: 0.8em;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  transition: all linear 0.35s;
+}
+section.tiles .tile-town .remover input[type='button']:hover {
+  font-size: 2.2em;
+  transform: rotate(180deg);
+}
+section.tiles .tile-town .main {
+  display: flex;
+  flex-direction: column;
+}
+section.tiles .tile-town .main .today {
+  height: 200px;
+}
+section.tiles .tile-town .main .forecast {
+  height: 100px;
 }
 section.action-part {
   display: flex;

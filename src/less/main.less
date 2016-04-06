@@ -17,13 +17,44 @@ section.tiles {
     justify-content: center;
     flex-wrap: wrap;
     margin-bottom: 5%;
-    text-align: center;
     .tile-town {
+        display: flex;
+        flex-direction: column;
         margin: 0 0.5% 1%;
         width: 30%;
         height: 300px;
         background-color: rgba(0, 0, 0, 0.3);
         color: white;
+        .remover {
+            display: block;
+            position: relative;
+            input[type='button'] {
+                position: absolute;
+                right: 0;
+                align-self: flex-end;
+                border: none;
+                background: transparent;
+                font-size: 0.8em;
+                font-weight: bold;
+                color: white;
+                cursor: pointer;
+                transition: all linear 0.35s;
+                &:hover {
+                    font-size: 2.2em;
+                    transform: rotate(180deg);
+                }
+            }
+        }
+        .main {
+            display: flex;
+            flex-direction: column;
+            .today {
+                height: 200px;
+            }
+            .forecast {
+                height: 100px;
+            }
+        }
     }
 }
 
