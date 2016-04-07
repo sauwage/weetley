@@ -2,14 +2,18 @@ html {
   min-height: 100%;
 }
 body {
+  margin: 0;
   min-height: 100%;
   background: url('../../src/background.jpg') no-repeat center center;
   background-size: cover;
   background-attachment: scroll;
   color: white;
 }
+h1 {
+  margin: 0;
+}
 .container {
-  padding: 5% 10% 0;
+  margin: 5% 10% 0;
 }
 section.tiles {
   display: flex;
@@ -18,8 +22,6 @@ section.tiles {
   margin-bottom: 5%;
 }
 section.tiles .tile-town {
-  display: flex;
-  flex-direction: column;
   margin: 0 0.5% 1%;
   width: 30%;
   height: 300px;
@@ -30,31 +32,51 @@ section.tiles .tile-town .remover {
   display: block;
   position: relative;
 }
-section.tiles .tile-town .remover input[type='button'] {
+section.tiles .tile-town .remover .remove-town {
   position: absolute;
   right: 0;
-  align-self: flex-end;
-  border: none;
-  background: transparent;
-  font-size: 0.8em;
-  font-weight: bold;
+  padding: 5px;
+  font-size: 22px;
   color: white;
   cursor: pointer;
   transition: all linear 0.35s;
 }
-section.tiles .tile-town .remover input[type='button']:hover {
+section.tiles .tile-town .remover .remove-town:hover {
   font-size: 2.2em;
-  transform: rotate(180deg);
+  transform: rotate(90deg);
 }
 section.tiles .tile-town .main {
-  display: flex;
-  flex-direction: column;
+  padding: 10px;
 }
 section.tiles .tile-town .main .today {
-  height: 200px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-bottom: 10px;
+  height: 180px;
+  border-bottom: solid 1px;
+}
+section.tiles .tile-town .main .today .icon {
+  font-size: 95px;
+}
+section.tiles .tile-town .main .today .info {
+  padding: 20px 0;
+}
+section.tiles .tile-town .main .today .info h1 {
+  padding-bottom: 15px;
+  font-size: 32px;
+}
+section.tiles .tile-town .main .today .info span {
+  font-size: 20px;
 }
 section.tiles .tile-town .main .forecast {
-  height: 100px;
+  display: flex;
+  align-items: center;
+  padding-top: 10px;
+  height: 90px;
+}
+section.tiles .tile-town .main .forecast i:before {
+  font-size: 2em;
 }
 section.action-part {
   display: flex;
@@ -72,6 +94,12 @@ section.action-part .tab-input form {
 }
 section.action-part .tab-input form span {
   align-self: center;
+}
+section.action-part .tab-input form input {
+  padding: 0 10px;
+}
+section.action-part .tab-input form input:focus {
+  outline: none;
 }
 section.action-part .tab-input form input.input {
   font-size: 20px;

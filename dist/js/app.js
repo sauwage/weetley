@@ -1,69 +1,58 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 var weatherJson = require('./icons.json');
-(function(){    
+(function(){
     var translateIcon = function(id) {
-    var prefix = 'wi wi-';
-    var code = id;
-    var icon = weatherJson[code].icon;
-    // If we are not in the ranges mentioned above, add a day/night prefix.
-    if (!(code > 699 && code < 800) && !(code > 899 && code < 1000)) {
-        icon = 'day-' + icon;
-    }
-    // Finally tack on the prefix.
-    icon = prefix + icon;
-    return icon;
+        var prefix = 'wi wi-';
+        var code = id;
+        var icon = weatherJson[code].icon;
+        if (!(code > 699 && code < 800) && !(code > 899 && code < 1000)) {
+            icon = 'day-' + icon;
+        }
+        icon = prefix + icon;
+        return icon;
     };
 
     var app = angular.module('weetley',[]);
-
     app.controller('weatherReport', function($scope, $http, $timeout){
         $scope.townsNames = [];
 
-        var initialState = function(townName){
-            $http({
-                url: 'http://api.openweathermap.org/data/2.5/weather',
-                method: "GET",
-                params: {
-                    q : townName,
-                    units: 'metric',
-                    appid : '8d37df734b83981d7ad5e4f21c004aa2'
+        $scope.addTown = function(city){
+            if(city == '') {
+                $scope.required = {
+                    "border" : "2px dotted red"
                 }
-            }).success(function(data){
-                $scope.townsNames.push({
-                    name: data.name,
-                    temp: data.main.temp
+            } else {
+                $scope.required = {
+                    "border" : "none"
+                };
+                $http({
+                    url: 'http://api.openweathermap.org/data/2.5/weather',
+                    method: "GET",
+                    params: {
+                        q : city,
+                        units: 'metric',
+                        appid : '8d37df734b83981d7ad5e4f21c004aa2'
+                    }
+                }).success(function(data){
+                    $scope.townsNames.push({
+                        id: translateIcon(data.weather[0].id),
+                        name: data.name,
+                        temp: data.main.temp
+                    });
+                }).error(function(){
+                    $timeout(function(){
+                        $scope.addTown(city);
+                    }, 1000);
                 });
-            }).error(function(){
-                $timeout(function(){
-                    initialState(townName);
-                }, 1000);
-            });
+            }
+
+            $scope.townToBeAdded = "";
         };
 
         $scope.init = function() {
-            initialState('Berlin');
-            initialState('Prague');
-            initialState('Stockholm');
-        };
-
-        $scope.addTown = function(){
-            $http({
-                url: 'http://api.openweathermap.org/data/2.5/weather',
-                method: "GET",
-                params: {
-                    q : $scope.townToBeAdded,
-                    units: 'metric',
-                    appid : '8d37df734b83981d7ad5e4f21c004aa2'
-                }
-            }).success(function(data){
-                $scope.townsNames.push({
-                    name: data.name,
-                    temp: data.main.temp
-                });
-                console.log($scope.townsNames);
-            });
-
-            $scope.townToBeAdded = "";
+            $scope.addTown('Berlin');
+            $scope.addTown('Prague');
+            $scope.addTown('Stockholm');
         };
 
         $scope.removeTown = function(x){

@@ -6,6 +6,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
         <title>Weather online</title>
         <link href="dist/css/main.min.css" rel="stylesheet">
+        <link href="src/components/weather-icons/css/weather-icons.css" rel="stylesheet">
+        <link href="src/components/font-awesome/css/font-awesome.css" rel="stylesheet">
         <script src="src/components/angular/angular.js"></script>
         <script src="src/components/jquery/dist/jquery.js"></script>
         <script type="text/javascript" src="dist/js/app.js"></script>
@@ -19,19 +21,22 @@
             <section class="tiles">
                 <div class="tile-town" ng-repeat="x in townsNames">
                     <div class="remover">
-                        <input type="button" value="x" class="remove-town" ng-click="removeTown(x)">
+                        <i class="fa fa-times-circle remove-town" ng-click="removeTown(x)"></i>
                     </div>
                     <div class="main">
                         <div class="today">
-                            
-                            <h1>{{x.name}}</h1>
-                            <div>Temperature: {{x.temp}}</div>
-                            <div></div>
+                            <div class="icon">
+                                <i class="{{x.id}}"></i>
+                            </div>
+                            <div class="info">
+                                <h1>{{x.name}}</h1>
+                                <span>Temperature: {{x.temp}}</span>
+                            </div>
                         </div>
                         <div class="forecast">
+                            <i class="{{x.id}}"></i>
                             <h1>{{x.name}}</h1>
-                            <div>Temperature: {{x.temp}}</div>
-                            <div></div>
+                            <span>Temperature: {{x.temp}}</span>
                         </div>
                     </div>
                 </div>
@@ -40,8 +45,8 @@
                 <div class="tab-input">
                     <form>
                         <span>Add town to the collection: </span>
-                        <input class="input" type="text" autofocus placeholder="e. g. Singapore" ng-model="townToBeAdded">
-                        <input class="submit" type="submit" ng-click="addTown()" value="+">
+                        <input class="input" type="text" autofocus placeholder="e. g. Singapore" ng-model="townToBeAdded" ng-style="required">
+                        <input class="submit" type="submit" ng-click="addTown(townToBeAdded)" value="+">
                     </form>
                 </div>
             </section>
