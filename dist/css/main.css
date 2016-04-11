@@ -1,5 +1,6 @@
 html {
   min-height: 100%;
+  font-family: 'Lato', sans-serif;
 }
 body {
   margin: 0;
@@ -24,7 +25,7 @@ section.tiles {
 section.tiles .tile-town {
   margin: 0 0.5% 1%;
   width: 30%;
-  height: 300px;
+  height: 330px;
   background-color: rgba(0, 0, 0, 0.3);
   color: white;
 }
@@ -59,9 +60,6 @@ section.tiles .tile-town .main .today {
 section.tiles .tile-town .main .today .icon {
   font-size: 95px;
 }
-section.tiles .tile-town .main .today .info {
-  padding: 20px 0;
-}
 section.tiles .tile-town .main .today .info h1 {
   padding-bottom: 15px;
   font-size: 32px;
@@ -70,18 +68,27 @@ section.tiles .tile-town .main .today .info span {
   font-size: 20px;
 }
 section.tiles .tile-town .main .forecast {
-  display: flex;
-  align-items: center;
   padding-top: 10px;
-  height: 90px;
 }
-section.tiles .tile-town .main .forecast i:before {
-  font-size: 2em;
+section.tiles .tile-town .main .forecast .small-tile {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 110px;
+  text-align: center;
+}
+section.tiles .tile-town .main .forecast .small-tile i {
+  padding: 5px 0;
+  font-size: 35px;
+}
+section.tiles .tile-town .main .forecast .small-tile div {
+  display: flex;
+  flex-direction: column;
 }
 section.action-part {
   display: flex;
   justify-content: center;
-  font-size: 27px;
+  font-size: 26px;
 }
 section.action-part .tab-input {
   padding: 2%;
@@ -111,4 +118,5 @@ section.action-part .tab-input form input.submit {
   background-color: rgba(0, 0, 0, 0.4);
   color: #fff;
   border: none;
+  cursor: pointer;
 }

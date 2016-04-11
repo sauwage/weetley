@@ -1,5 +1,6 @@
 html {
     min-height: 100%;
+    font-family: 'Lato', sans-serif;
 }
 body {
     margin: 0;
@@ -25,7 +26,7 @@ section.tiles {
     .tile-town {
         margin: 0 0.5% 1%;
         width: 30%;
-        height: 300px;
+        height: 330px;
         background-color: rgba(0, 0, 0, 0.3);
         color: white;
         .remover {
@@ -58,7 +59,6 @@ section.tiles {
                     font-size: 95px;
                 }
                 .info {
-                    padding: 20px 0;
                     h1 {
                         padding-bottom: 15px;
                         font-size: 32px;
@@ -69,12 +69,21 @@ section.tiles {
                 }
             }
             .forecast {
-                display: flex;
-                align-items: center;
                 padding-top: 10px;
-                height: 90px;
-                i:before {
-                    font-size: 2em;
+                .small-tile {
+                    display: flex;
+                    justify-content: space-around;
+                    align-items: center;
+                    height: 110px;
+                    text-align: center;
+                    i {
+                        padding: 5px 0;
+                        font-size: 35px;
+                    }
+                    & div {
+                        display: flex;
+                        flex-direction: column;
+                    }
                 }
             }
         }
@@ -84,7 +93,7 @@ section.tiles {
 section.action-part {
     display: flex;
     justify-content: center;
-    font-size: 27px;
+    font-size: 26px;
     .tab-input {
         padding: 2%;
         background-color: rgba(0, 0, 0, 0.3);
@@ -110,6 +119,7 @@ section.action-part {
                     background-color: rgba(0,0,0,0.4);
                     color: #fff;
                     border: none;
+                    cursor: pointer;
                 }
             }
         }

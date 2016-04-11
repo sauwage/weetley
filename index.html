@@ -5,6 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
         <title>Weather online</title>
+        <link href='https://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
         <link href="dist/css/main.min.css" rel="stylesheet">
         <link href="src/components/weather-icons/css/weather-icons.css" rel="stylesheet">
         <link href="src/components/font-awesome/css/font-awesome.css" rel="stylesheet">
@@ -26,17 +27,21 @@
                     <div class="main">
                         <div class="today">
                             <div class="icon">
-                                <i class="{{x.id}}"></i>
+                                <i class="{{x.icon_today}}"></i>
                             </div>
                             <div class="info">
                                 <h1>{{x.name}}</h1>
-                                <span>Temperature: {{x.temp}}</span>
+                                <span>Temperature: {{x.temp_today}} &deg;C</span>
                             </div>
                         </div>
                         <div class="forecast">
-                            <i class="{{x.id}}"></i>
-                            <h1>{{x.name}}</h1>
-                            <span>Temperature: {{x.temp}}</span>
+                            <div class="small-tile">
+                                <div ng-repeat="y in x.forecast">
+                                    <span>{{y.date}}</span>
+                                    <i class="{{y.icon}}"></i>
+                                    <span>{{y.temp}} &deg;C</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
